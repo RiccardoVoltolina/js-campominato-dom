@@ -28,11 +28,34 @@ const numeri = 100
 let insiemeNumeriRandom = []
 for (let i = 0; i < 16; i++) {
     let numeriRandom = Math.floor(Math.random() * 100) + 1;
-    console.log(numeriRandom);
     insiemeNumeriRandom.push(numeriRandom)
-    
+}
+console.log(insiemeNumeriRandom);
+
+for (let i = 0; i < insiemeNumeriRandom.length; i++) {
+    console.log(insiemeNumeriRandom[i]);
+    let verificaNumeri = insiemeNumeriRandom
+    console.log(verificaNumeri);
+    verificaNumeri.includes(insiemeNumeriRandom[i])
+    console.log(verificaNumeri);
  
 }
+console.log(insiemeNumeriRandom);
+
+let prova = [1, 2, 3, 3, 4, 5, 6, 6]
+let prova2 = [55,66,77,6]
+let risultatoProva = prova2.includes(55,7,8,66)
+console.log(risultatoProva);
+
+
+
+/* let obj = {"geeks1": 10, "geeks2": 12}
+let gfg = ["geeks1", "geeks2", obj];
+ 
+ Use JavaScript includes() method 
+let num = gfg.includes(obj, 0);
+ 
+console.log(num) */
 
 
 
@@ -54,7 +77,9 @@ document.querySelector('.generate').addEventListener('click' , function () {
             /* console.log('Il numero selezionato è il : ' + quadratoElement.innerText); */
             
             console.log(`Il numero selezionato è ${+quadratoElement.innerText === 1 ? "l'" : "il"} : ${quadratoElement.innerText}`);
-            quadratoElement.className = 'blue'
+            if (quadratoElement) {
+                
+            }
        
         })
     }

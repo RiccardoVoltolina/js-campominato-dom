@@ -36,3 +36,7 @@ body {
 .none {
     display: none;
 }
+
+.red {
+    background-color: red;
+}
