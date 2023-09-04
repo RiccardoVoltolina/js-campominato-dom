@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    max-width: 1120px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.square,.blue {
+    border: 2px solid white;
+    width: calc(100% / 10);
+    aspect-ratio: 1 / 1;
+    color: red;
+}
+
+.blue {
+    background-color: blue;
+   
+}
+
+.d-block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
