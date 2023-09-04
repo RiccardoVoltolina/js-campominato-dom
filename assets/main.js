@@ -84,7 +84,7 @@ document.querySelector('.generate').addEventListener('click' , function () {
             if (Number(quadratoElement.innerText) === Number(insiemeNumeriRandom[i])) {
                 quadratoRosso = true
                 console.log(quadratoRosso);
-                quadratoElement.className = 'red'
+                quadratoElement.className = 'red' 
             } 
            
         }
