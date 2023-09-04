@@ -21,7 +21,7 @@ body {
     border: 2px solid white;
     width: calc(100% / 10);
     aspect-ratio: 1 / 1;
-    color: red;
+    color: white;
 }
 
 .blue {
@@ -35,6 +35,13 @@ body {
 
 .none {
     display: none;
+}
+
+.square,.red {
+    border: 2px solid white;
+    width: calc(100% / 10);
+    aspect-ratio: 1 / 1;
+    color: white;
 }
 
 .red {

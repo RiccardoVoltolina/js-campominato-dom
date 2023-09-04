@@ -26,11 +26,13 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 const containerElement = document.querySelector('.container')
 const numeri = 100
 let insiemeNumeriRandom = []
+let quadratoRosso;
 for (let i = 0; i < 16; i++) {
     let numeriRandom = Math.floor(Math.random() * 100) + 1;
     insiemeNumeriRandom.push(numeriRandom)
 }
 console.log(insiemeNumeriRandom);
+
 /* 
 for (let i = 0; i < insiemeNumeriRandom.length; i++) {
     console.log(insiemeNumeriRandom[i]);
@@ -57,6 +59,7 @@ console.log(num) */
 
 
 
+
 document.querySelector('.generate').addEventListener('click' , function () {
     if (containerElement.className = 'none') {
         containerElement.className = 'container'
@@ -70,13 +73,22 @@ document.querySelector('.generate').addEventListener('click' , function () {
         quadratoElement.className = 'square'
         quadratoElement.innerText = i + 1
         containerElement.append(quadratoElement)
+       
         quadratoElement.addEventListener('click' , function() {
-            /* console.log('Il numero selezionato è il : ' + quadratoElement.innerText); */
+        /* console.log('Il numero selezionato è il : ' + quadratoElement.innerText); */
             
-            console.log(`Il numero selezionato è ${+quadratoElement.innerText === 1 ? "l'" : "il"} : ${quadratoElement.innerText}`);
-            if (quadratoElement) {
-                
-            }
+        console.log(`Il numero selezionato è ${+quadratoElement.innerText === 1 ? "l'" : "il"} : ${quadratoElement.innerText}`);
+        quadratoElement.className = 'blue'
+
+        for (let i = 0; i < insiemeNumeriRandom.length; i++) {
+            if (Number(quadratoElement.innerText) === Number(insiemeNumeriRandom[i])) {
+                quadratoRosso = true
+                console.log(quadratoRosso);
+                quadratoElement.className = 'red'
+            } 
+           
+        }
+        
        
         })
     }
