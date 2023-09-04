@@ -71,6 +71,7 @@ console.log(num) */
 
 
 
+
 document.querySelector('.generate').addEventListener('click' , function () {
     if (containerElement.className = 'none') {
         containerElement.className = 'container'
