@@ -28,14 +28,15 @@ const numeri = 100
 let listaNumeriRandom = []
 let quadratoRosso;
 for (let i = 0; i < 16; i++) {
-    /* se il numeroRandom è già presente nella lista numeriRandom
+    let numeroRandom = Math.floor(Math.random() * 100) + 1;
+    /* se il numeroRandom è già presente nella listaumeriRandom
        rigenero il numero
     */
-    let numeroRandom = Math.floor(Math.random() * 100) + 1;
+ 
     listaNumeriRandom.push(numeroRandom)
-    if (numeroRandom.includes()) {
+   /*  if (numeroRandom.includes()) {
         
-    }
+    } */
 }
 console.log(listaNumeriRandom);
 let h1Element = document.querySelector('h1')
