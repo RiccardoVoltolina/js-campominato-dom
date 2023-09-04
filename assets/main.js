@@ -31,7 +31,7 @@ for (let i = 0; i < 16; i++) {
     insiemeNumeriRandom.push(numeriRandom)
 }
 console.log(insiemeNumeriRandom);
-
+/* 
 for (let i = 0; i < insiemeNumeriRandom.length; i++) {
     console.log(insiemeNumeriRandom[i]);
     let verificaNumeri = insiemeNumeriRandom
@@ -42,10 +42,7 @@ for (let i = 0; i < insiemeNumeriRandom.length; i++) {
 }
 console.log(insiemeNumeriRandom);
 
-let prova = [1, 2, 3, 3, 4, 5, 6, 6]
-let prova2 = [55,66,77,6]
-let risultatoProva = prova2.includes(55,7,8,66)
-console.log(risultatoProva);
+
 
 
 
