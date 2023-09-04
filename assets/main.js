@@ -22,27 +22,38 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 
 
 
-
+let giocoAttivo = true
 const containerElement = document.querySelector('.container')
 const numeri = 100
-let insiemeNumeriRandom = []
+let listaNumeriRandom = []
 let quadratoRosso;
 for (let i = 0; i < 16; i++) {
-    let numeriRandom = Math.floor(Math.random() * 100) + 1;
-    insiemeNumeriRandom.push(numeriRandom)
+    /* se il numeroRandom è già presente nella lista numeriRandom
+       rigenero il numero
+    */
+    let numeroRandom = Math.floor(Math.random() * 100) + 1;
+    listaNumeriRandom.push(numeroRandom)
+    if (numeroRandom.includes()) {
+        
+    }
 }
-console.log(insiemeNumeriRandom);
+console.log(listaNumeriRandom);
+let h1Element = document.querySelector('h1')
+h1Element.classList.add('white','none')
+let clickTotali = 0;
+
+
 
 /* 
-for (let i = 0; i < insiemeNumeriRandom.length; i++) {
-    console.log(insiemeNumeriRandom[i]);
-    let verificaNumeri = insiemeNumeriRandom
+for (let i = 0; i < listaNumeriRandom.length; i++) {
+    console.log(listaNumeriRandom[i]);
+    let verificaNumeri = listaNumeriRandom
     console.log(verificaNumeri);
-    verificaNumeri.includes(insiemeNumeriRandom[i])
+    verificaNumeri.includes(listaNumeriRandom[i])
     console.log(verificaNumeri);
  
 }
-console.log(insiemeNumeriRandom);
+console.log(listaNumeriRandom);
 
 
 
@@ -75,26 +86,35 @@ document.querySelector('.generate').addEventListener('click' , function () {
         containerElement.append(quadratoElement)
        
         quadratoElement.addEventListener('click' , function() {
-        /* console.log('Il numero selezionato è il : ' + quadratoElement.innerText); */
-            
-        console.log(`Il numero selezionato è ${+quadratoElement.innerText === 1 ? "l'" : "il"} : ${quadratoElement.innerText}`);
-        quadratoElement.className = 'blue'
+          if (giocoAttivo === true) {
+              /* console.log('Il numero selezionato è il : ' + quadratoElement.innerText); */
+              clickTotali++;
+              if (clickTotali >= 84) {
+                  h1Element.innerHTML = 'Complimenti,hai vinto!'
+              }
+                  
+              console.log(`Il numero selezionato è ${+quadratoElement.innerText === 1 ? "l'" : "il"} : ${quadratoElement.innerText}`);
+              quadratoElement.className = 'blue'
+  
+              for (let i = 0; i < listaNumeriRandom.length; i++) {
+                  if (Number(quadratoElement.innerText) === Number(listaNumeriRandom[i])) {
+                      quadratoRosso = true
+                      console.log(quadratoRosso);
+                      quadratoElement.className = 'red' 
+                      h1Element.classList.remove('none')
+                      h1Element.innerHTML = 'Ops, hai preso una bomba,hai perso!'
+                      giocoAttivo = false
+                      console.log('hai cliccato in totale ' + clickTotali);
 
-        for (let i = 0; i < insiemeNumeriRandom.length; i++) {
-            if (Number(quadratoElement.innerText) === Number(insiemeNumeriRandom[i])) {
-                quadratoRosso = true
-                console.log(quadratoRosso);
-                quadratoElement.className = 'red' 
-            } 
-           
-        }
+                  } 
+             
+              }
+          }
         
        
         })
     }
 })
 document.querySelector('.delete').addEventListener('click' , function(){
-    if (containerElement.className = 'container') {
-        containerElement.className = 'none'
-    }
+    location.reload();
 })
