@@ -27,47 +27,16 @@ const containerElement = document.querySelector('.container')
 const numeri = 100
 let listaNumeriRandom = []
 let quadratoRosso;
-for (let i = 0; i < 16; i++) {
-    let numeroRandom = Math.floor(Math.random() * 100) + 1;
-    /* se il numeroRandom è già presente nella listaumeriRandom
-       rigenero il numero
-    */
- 
-    listaNumeriRandom.push(numeroRandom)
-   /*  if (numeroRandom.includes()) {
-        
-    } */
+while (listaNumeriRandom.length < 16) {
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    if (! listaNumeriRandom.includes(randomNumber)) {
+        listaNumeriRandom.push(randomNumber)
+    }
 }
 console.log(listaNumeriRandom);
 let h1Element = document.querySelector('h1')
 h1Element.classList.add('white','none')
 let clickTotali = 0;
-
-
-
-/* 
-for (let i = 0; i < listaNumeriRandom.length; i++) {
-    console.log(listaNumeriRandom[i]);
-    let verificaNumeri = listaNumeriRandom
-    console.log(verificaNumeri);
-    verificaNumeri.includes(listaNumeriRandom[i])
-    console.log(verificaNumeri);
- 
-}
-console.log(listaNumeriRandom);
-
-
-
-
-
-/* let obj = {"geeks1": 10, "geeks2": 12}
-let gfg = ["geeks1", "geeks2", obj];
- 
- Use JavaScript includes() method 
-let num = gfg.includes(obj, 0);
- 
-console.log(num) */
-
 
 
 
